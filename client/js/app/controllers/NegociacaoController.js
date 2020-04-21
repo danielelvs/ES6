@@ -10,22 +10,15 @@ class NegociacaoController {
     adiciona(event) {
         event.preventDefault(); // cancela a submissao do formulario
 
-        // retorna o tipo. Informacao de vies educativo
-        // console.log(typeof(this._inputData.value));
-
-        // let data = new Date(this._inputData.value.split('-'));
-        let data = new Date(this._inputData.value.replace(/-/g, ','));
-
-    
-        // let negociacao = new Negociacao(
-        //     this._inputData.value,
-        //     this._inputQuantidade.value,
-        //     this._inputValor.value
-        // );
-
+        // ... spread operator
+        let data = new Date(...
+            this._inputData.value
+                .split('-')
+                .map(function(item, indice) {
+                    return item - indice % 2;
+                })
+        );
         console.log(data);
-
-        // adicionar a negociacao em uma lista
     }
 
 }
