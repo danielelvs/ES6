@@ -10,7 +10,12 @@ class NegociacaoController {
     adiciona(event) {
         event.preventDefault(); // cancela a submissao do formulario
 
-        console.log(typeof(this._inputData.value));
+        // retorna o tipo. Informacao de vies educativo
+        // console.log(typeof(this._inputData.value));
+
+        // let data = new Date(this._inputData.value.split('-'));
+        let data = new Date(this._inputData.value.replace(/-/g, ','));
+
     
         // let negociacao = new Negociacao(
         //     this._inputData.value,
@@ -18,7 +23,7 @@ class NegociacaoController {
         //     this._inputValor.value
         // );
 
-        console.log(negociacao);
+        console.log(data);
 
         // adicionar a negociacao em uma lista
     }
