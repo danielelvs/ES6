@@ -14,11 +14,16 @@ class NegociacaoController {
         let data = new Date(...
             this._inputData.value
                 .split('-')
-                .map(function(item, indice) {
-                    return item - indice % 2;
-                })
+                .map((item, indice) => item - indice % 2) // como so tem uma linha, nao preciso do return, ele esta ali implicitamente.
         );
-        console.log(data);
+
+        let negociacao = new Negociacao(
+            data,
+            this._inputQuantidade.value,
+            this._inputValor.value
+        )
+
+        console.log(negociacao);
     }
 
 }
