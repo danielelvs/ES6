@@ -2,18 +2,25 @@ class NegociacaoController {
 
     constructor() {
         let $ = document.querySelector.bind(document); //criando alias de document query selector
-        this.inputData = $('#data');
-        this.inputQuantidade = $('#quantidade');
-        this.inputValor = $('#valor');
+        this._inputData = $('#data');
+        this._inputQuantidade = $('#quantidade');
+        this._inputValor = $('#valor');
     }
 
     adiciona(event) {
         event.preventDefault(); // cancela a submissao do formulario
-        console.log(
-            this.inputData.value, 
-            this.inputQuantidade.value, 
-            this.inputValor.value
-        );
+
+        console.log(typeof(this._inputData.value));
+    
+        // let negociacao = new Negociacao(
+        //     this._inputData.value,
+        //     this._inputQuantidade.value,
+        //     this._inputValor.value
+        // );
+
+        console.log(negociacao);
+
+        // adicionar a negociacao em uma lista
     }
 
 }
